@@ -4,7 +4,7 @@ This is a repository template for Ansible roles. See GitHub's documentation on h
 
 This template runs tests using Ansible Molecule. Automated tests have been configured to run on GitHub actions in the [.github/workflows/ci.yml](.github/workflows/ci.yml) file. The Docker Molecule driver is used to run the tests. The following pip packages are required (if you were to run Ansible Molecule locally):
 
-1. molecule
+1. molecule 3.x.x (Install by running `pip install "molecule>=3,<4"`)
 1. docker-py
 
 After you create your repository from this template:
