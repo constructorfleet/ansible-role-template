@@ -5,4 +5,4 @@
   tasks:
     - name: Run role
       ansible.builtin.include_role:
-        name: ansible-role
+        name: ansible-role-template
