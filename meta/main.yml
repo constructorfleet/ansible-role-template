@@ -1,0 +1,24 @@
+galaxy_info:
+  author: TODO
+  description: TODO
+  namespace: constructorfleet
+  name: TODO
+  readme: README.md
+  issue_tracker_url: http://github.com/constructorfleet/TODO/issue/tracker
+
+  license: MIT
+
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: ubuntu
+      versions:
+        - 18.04
+        - 20.04
+    - name: Centos
+      versions:
+        - 7
+
+  galaxy_tags: []
+
+dependencies: []
