@@ -1,10 +1,12 @@
 ---
-# This is a playbook to execute Ansible tests.
 
 - name: Verify
   hosts: all
   strategy: free
   tasks:
-    - name: Example assertion
-      assert:
-        that: true
+    - name: Assert something
+      ansible.builtin.assert:
+        that:
+          - "{{ 1 == 1 }}"
+        success_msg: "Assertion is true"
+        fail_msg: "Assertion is false"

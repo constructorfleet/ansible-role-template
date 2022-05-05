@@ -1,16 +1,24 @@
----
 galaxy_info:
-  role_name: ""
-  author: Ona Engineering
-  description: your role description
-  company: Ona Systems Inc
-  license: Apache-2.0
-  min_ansible_version: 2.8
-  galaxy_tags: []
+  author: TODO
+  description: TODO
+  namespace: constructorfleet
+  name: TODO
+  readme: README.md
+  issue_tracker_url: http://github.com/constructorfleet/TODO/issue/tracker
+
+  license: MIT
+
+  min_ansible_version: 2.9
+
   platforms:
-    - name: Ubuntu
+    - name: ubuntu
       versions:
-        - 16.04
         - 18.04
+        - 20.04
+    - name: Centos
+      versions:
+        - 7
+
+  galaxy_tags: []
 
 dependencies: []

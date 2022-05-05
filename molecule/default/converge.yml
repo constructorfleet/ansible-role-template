@@ -3,6 +3,6 @@
   hosts: all
   strategy: free
   tasks:
-    - name: "Include role"
-      include_role:
-        name: "ansible-role"
+    - name: Run role
+      ansible.builtin.include_role:
+        name: ansible-role
