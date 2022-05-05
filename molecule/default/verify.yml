@@ -3,6 +3,7 @@
 
 - name: Verify
   hosts: all
+  strategy: free
   tasks:
     - name: Example assertion
       assert:
