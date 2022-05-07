@@ -27,4 +27,4 @@
   tasks:
     - name: Run role
       ansible.builtin.include_role:
-        name: constructorfleet.role
+        name: constructorfleet.ansible_role
