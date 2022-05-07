@@ -1,52 +1,29 @@
----
 dependency:
   name: galaxy
+  options:
+    ignore-certs: true
+    ignore-errors: true
+    role-file: molecule/default/requirements.yml
 driver:
   name: docker
 platforms:
-  - name: ubuntu-20.04
-    image: joepublic/molecule-ubuntu:20.04
-    privileged: true
-    command: /lib/systemd/systemd
-    capabilities:
-      - SYS_ADMIN
-    tmpfs:
-      - /tmp
-      - /run
-      - /run/lock
+  - name: "${MOLECULE_DISTRO:-centos7}"
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
+    command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: ubuntu-18.04
-    image: joepublic/molecule-ubuntu:18.04
     privileged: true
-    command: /lib/systemd/systemd
-    capabilities:
-      - SYS_ADMIN
-    tmpfs:
-      - /tmp
-      - /run
-      - /run/lock
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  - name: centos-7
-    image: joepublic/molecule-centos:7
-    privileged: true
-    command: /usr/sbin/init
-    capabilities:
-      - SYS_ADMIN
-    tmpfs:
-      - /tmp
-      - /run
-      - /run/lock
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    pre_build_image: true
 provisioner:
   name: ansible
+  playbooks:
+    converge: ${MOLECULE_PLAYBOOK:-converge.yml}
   options:
-    vvv: True
-#lint: |
-#  set -e
-#  yamllint .
-#  ansible-lint .
+    vvv: true
 verifier:
   name: ansible
+  options:
+    vvv: true
+  inventory:
+    all:
+      ceph: []
