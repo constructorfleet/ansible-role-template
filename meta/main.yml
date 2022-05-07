@@ -3,6 +3,7 @@
 galaxy_info:
   author: TODO
   description: TODO
+  role_name: role
   namespace: constructorfleet
 
   readme: README.md
