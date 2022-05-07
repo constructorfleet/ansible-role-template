@@ -1,8 +1,11 @@
+---
+
 galaxy_info:
   author: TODO
   description: TODO
+  role_name: role
   namespace: constructorfleet
-  name: TODO
+
   readme: README.md
   issue_tracker_url: http://github.com/constructorfleet/TODO/issue/tracker
 
