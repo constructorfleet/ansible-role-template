@@ -11,6 +11,8 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v2
+        with:
+          path: "${{ github.repository }}"
       - name: Publish Ansible role to Galaxy
         uses: robertdebock/galaxy-action@1.2.0
         with:
